@@ -12,28 +12,51 @@
 
 <body>
 
-    <div class="container">
+    {% for message in MESSAGES_ERREUR %}
+        <div class="alert alert-{{ message.type|e }}">{{ message.message|e }}</div>
+    {% endfor %}
+    <div class="container p-4">
         <h1>Ajout d'agences</h1>
-        <form action="traitement_mail.php" method="post">
+        <form method="post">
             <div class="form-group">
                 <label for="nom">Nom</label>
-                <input type="text" name="nom" id="nom" class="form-control">
+                <input type="text" name="nom" id="nom" class="form-control" value="{{ POST.nom }}">
             </div>
             <div class="form-group">
                 <label for="mail">Mail</label>
-                <input type="text" name="mail" id="mail" class="form-control">
+                <input type="text" name="mail" id="mail" class="form-control" value="{{ POST.mail }}">
             </div>
             <div class="form-group">
                 <input type="submit" name="ajout" class="btn btn-success">
             </div>
+        </form>
+        <hr>
+
+        <h1>Liste des agences</h1>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Envoyé ?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+            </tbody>
+        </table>
+
     </div>
-    </form>
 
 
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
-
 </html>

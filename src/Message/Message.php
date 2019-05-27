@@ -9,7 +9,7 @@ class Message
     public const MSG_WARNING = 3;
     private const MSG_TYPE_STRING = [
         'success',
-        'error',
+        'danger',
         'info',
         'warning'
     ];

@@ -4,12 +4,12 @@ namespace App\App;
 class App
 {
     const DB_SGBD = 'mysql';
-    const DB_HOST = 'host';
-    const DB_DATABASE = 'database;charset=utf8';
-    const DB_USER = 'login';
-    const DB_PASSWORD = 'password';
+    const DB_HOST = 'localhost';
+    const DB_DATABASE = 'phpmailer;charset=utf8';
+    const DB_USER = 'root';
+    const DB_PASSWORD = '';
     public static $db;
-    const URL = "https://www.my-website.fr";
+    const URL = "http://localhost/mail/";
 
     static public function DB_Connect() : void
     {

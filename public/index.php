@@ -7,6 +7,6 @@ require __DIR__ . '/../vendor/autoload.php';
 use App\Router\Router;
 use App\App\App;
 
-// App::DB_Connect();
+App::DB_Connect();
 
 Router::parseRoute();
