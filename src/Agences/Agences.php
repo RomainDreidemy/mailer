@@ -40,4 +40,24 @@ Class Agences
         Message::add(Message::MSG_SUCCESS, 'L\'agence a été ajouté à la base de donnée');
         return true;
     }
+
+    public static function recup($param = NULL) : array
+    {
+        /* $param :
+        * NULL = ALL
+        * 0 = non envoyé
+        * 1 = envoyé
+        */
+
+        // Si $param est null
+        if(is_null($param)){
+            $select = App::$db->query('SELECT * FROM agence ORDER BY envoi ASC, id_agence DESC');
+            return $select->fetchAll(\PDO::FETCH_ASSOC) ?? [];
+        }
+
+        // Si $param n'est pas nul
+        $select = App::$db->prepare('SELECT * FROM agence WHERE envoi = :envoi');
+        $select->execute(['envoi' => $param]);
+        return $select->fetchAll(\PDO::FETCH_ASSOC) ?? [];
+    }
 }

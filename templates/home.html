@@ -43,12 +43,14 @@
                 </tr>
             </thead>
             <tbody>
+                {% for AGENCE in AGENCES %}
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <th scope="row">{{ AGENCE.id_agence }}</th>
+                    <td>{{ AGENCE.nom }}</td>
+                    <td>{{ AGENCE.mail }}</td>
+                    <td>{% if AGENCE.envoi == 1 %} OUI {% else %} NON {% endif %}</td>
                 </tr>
+                {% endfor%}
             </tbody>
         </table>
 

@@ -16,11 +16,13 @@ class HomeController extends AbstractController
             }
         }
 
+        $agences = Agences::recup();
 
         self::twig(
             'home.html',
             [
                 'HTML_TITLE' => "Accueil | Pay-Able",
+                'AGENCES' => $agences,
                 'POST' => [
                     'nom' => $_POST['nom'] ?? '',
                     'mail' => $_POST['mail'] ?? '',
