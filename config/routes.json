@@ -6,6 +6,12 @@
       "class": "App\\Controller\\HomeController",
       "method": "home",
       "name": "accueil"
+    },
+    {
+      "url": "/envoi-mail",
+      "class": "App\\Controller\\HomeController",
+      "method": "envoiMail",
+      "name": "envoiMail"
     }
   ]
 }
