@@ -1,0 +1,11 @@
+{
+  "routes" :
+  [
+    {
+      "url": "/",
+      "class": "App\\Controller\\HomeController",
+      "method": "home",
+      "name": "accueil"
+    }
+  ]
+}
